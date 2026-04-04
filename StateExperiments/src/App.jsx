@@ -1,13 +1,17 @@
 import { useState } from "react"
 
 function App(){
+  const [bulbOn,setBulbOn] = useState(true);
+
   return <div>
-    <LightBulb />
+    <LightBulb bulbOn={bulbOn} setBulbOn={setBulbOn}/>
   </div>
 }
 
-function LightBulb(){
-  const [bulbOn,setBulbOn] = useState(true);
+function LightBulb({bulbOn,setBulbOn}){
+  
+  //bulbOn is a prop in the Bulb state componenet
+  //bulbOn,setBulbOn are props to the toggle State component
   return <div>
     <BulbState bulbOn = {bulbOn}/>
     <ToggleBulbState bulbOn={bulbOn} 
