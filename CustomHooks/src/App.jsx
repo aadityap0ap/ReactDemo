@@ -3,7 +3,14 @@ import { useFtech } from "./hooks/useFetch";
 
 function App(){
   const [currentPost,SetCurrentPost ] = useState(1);
-  const { finalData } = useFtech("https://jsonplaceholder.typicode.com/posts/1" + currentPost);
+  const { finalData ,loading } = useFtech("https://jsonplaceholder.typicode.com/posts/1" + currentPost);
+  
+  if(loading){
+    return <div>
+      Loading......
+    </div>
+  }
+
   return (
     <div>
       <button onClick={() => SetCurrentPost(1)}>1</button>
