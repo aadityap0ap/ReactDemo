@@ -1,15 +1,11 @@
 import { useEffect, useState } from "react";
-import { usePostTitle } from "./hooks/useFetch";
+import { useFtech } from "./hooks/useFetch";
 
 function App(){
- const postTitle = usePostTitle();
- //a very good question ?
- //why are we creating hooks why cant we create a function of same name
- //the ans is we cant create a function which uses hooks underthe hood and we are using usestate and useeffect hooks in usePostTitle hook
- 
+ const { finalData } = useFtech("https://jsonplaceholder.typicode.com/posts/1");
   return (
     <div>
-      {postTitle}
+      {JSON.stringify(finalData)};
     </div>
   )
 }
