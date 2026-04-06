@@ -1,20 +1,15 @@
 import { useEffect, useState } from "react";
+import { usePostTitle } from "./hooks/useFetch";
 
 function App(){
-  const [post,setPost] = useState({});
-
-  async function getPosts(){
-    const response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
-    const json = await response.json();
-    setPost(json);
-  }
-
-  useEffect(() => {
-    getPosts();
-  },[])
+ const postTitle = usePostTitle();
+ //a very good question ?
+ //why are we creating hooks why cant we create a function of same name
+ //the ans is we cant create a function which uses hooks underthe hood and we are using usestate and useeffect hooks in usePostTitle hook
+ 
   return (
     <div>
-      {post.title}
+      {postTitle}
     </div>
   )
 }
