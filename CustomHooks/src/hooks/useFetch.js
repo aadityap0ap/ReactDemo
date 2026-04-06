@@ -13,7 +13,7 @@ export function useFtech(url){
 
     useEffect(() => {
         getDetails();
-    },[])
+    },[url])
 
     return{
         finalData
