@@ -21,7 +21,6 @@ function App(){
 }
 
 function LightBulb(){
-  
   //bulbOn is a prop in the Bulb state componenet
   //bulbOn,setBulbOn are props to the toggle State component
   return <div>
