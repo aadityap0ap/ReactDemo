@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { useFtech } from "./hooks/useFetch";
 import { usePrev } from "./hooks/usePrev";
+import { useDebounce } from "./hooks/useDebounce";
+
+
 
 function App(){
   // const [currentPost,SetCurrentPost ] = useState(1);
@@ -21,18 +24,31 @@ function App(){
   //   </div>
   // )
 
-  const [state,setState] = useState(0);
-  const prev = usePrev(state);
+  // const [state,setState] = useState(0);
+  // const prev = usePrev(state);
+
+  // return (
+  //   <div>
+  //     <p>{state}</p>
+  //     <button
+  //     onClick={()=>{
+  //       setState((curr) => curr + 1)
+  //     }}
+  //     >click me</button>
+  //     <p>The prev state was{prev}</p>
+  //   </div>
+  // )
+
+  //useDebounce
+  function sendDataToBackEnd(){
+    fetch("api.amazon.com/search");
+  }
+
+  const debouncedFn = useDebounce(sendDataToBackEnd);
 
   return (
     <div>
-      <p>{state}</p>
-      <button
-      onClick={()=>{
-        setState((curr) => curr + 1)
-      }}
-      >click me</button>
-      <p>The prev state was{prev}</p>
+      <input type="text" onChange={debouncedFn}></input>
     </div>
   )
 }
