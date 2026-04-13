@@ -1,10 +1,12 @@
+import { Input } from "./components/Input";
+import { Button } from "./components/Button";
+
 export default function App() {
   return (
-    <div className="sm:grid grid-cols-12">
-      <div className="bg-red-800 col-span-4">Child 1</div>
-      <div className="bg-red-500 col-span-6">Child 2</div>
-      <div className="bg-red-200 col-span-2">Child 3</div>
+    <div className="h-screen bg-blue-700">
+       <Input type="text" placeholder={"Username"}></Input>
+       <Button>SignIn</Button>
     </div>
-    // <div className="md:bg-green-800 sm:bg-blue-300 bg-red-900">Hello</div>
+   
   );
 }
